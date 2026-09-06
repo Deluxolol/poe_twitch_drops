@@ -111,7 +111,7 @@ def payload(game, ident, title, body):
         "url": f"{BASE}/forum/view-thread/{ident}",
         "description": snippet,
         "color": 9520895,
-        "footer": {"text": "Twitch Drop(s) genoemd — bekijk de aankondiging voor voorwaarden en tijden."},
+        "footer": {"text": "Twitch Drops mentioned — check the announcement for requirements and start/end times."},
     }]}
 
 
@@ -171,7 +171,7 @@ def main():
     webhook = validate_webhook(os.environ.get("DISCORD_WEBHOOK_URL") or config.get("webhook_url", ""))
     interval = max(60, int(config.get("interval_seconds", 900)))
     if args.test:
-        send(webhook, {"content": "Test geslaagd! PoE 1 + PoE 2 Twitch Drops-webhook werkt."})
+        send(webhook, {"content": "Test successful! The PoE 1 + PoE 2 Twitch Drops webhook is working."})
         print("Testbericht verstuurd.")
         return 0
     # One process at a time, released automatically even after a crash.
